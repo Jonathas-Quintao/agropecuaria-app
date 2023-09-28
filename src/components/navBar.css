@@ -1,0 +1,24 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.nav-item{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #ACAAAD;
+}
+.nav-link{
+    font-size: 2em;
+}
+.active{
+    border-radius: 10px;
+    width: 100%;
+    
+}
