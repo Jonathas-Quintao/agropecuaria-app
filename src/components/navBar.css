@@ -15,10 +15,13 @@
     background-color: #ACAAAD;
 }
 .nav-link{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .active{
     border-radius: 10px;
     width: 100%;
     
+}
+.barra-menu{
+    width: 25%;
 }
