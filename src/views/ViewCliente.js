@@ -43,16 +43,7 @@ const Cliente = () => {
             </tr>
           ))}
         </table>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Type</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-            </tr>
-          </thead>
-        </table>
+        
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 .input-pesquisar{
     border-width: 0.3em solid #000;
     border-radius: 0.5em;
-    padding: 0.2em;
-    width: 30em;
+    padding: 0.4em;
+    width: 50em;
 }
 .btn-pesquisar{
     border-radius: 0.5em;
@@ -13,10 +13,11 @@
 .btn-cadastrar{
     border-radius: 0.5em;
     padding: 0.5em;
-    margin-left:5em;
-    width: 20em;
+    margin-left:1em;
+    width: 12.5em;
 }
 .container{
     display: block;
     margin-top: 0.5em;
+    margin-left: 0;
 }

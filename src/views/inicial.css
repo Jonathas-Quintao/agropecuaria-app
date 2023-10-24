@@ -1,4 +1,8 @@
 .teste{
     display: flex;
     flex-direction: row;
+    width: 100%;
+}
+.conteudo{
+    width: 100%;
 }
