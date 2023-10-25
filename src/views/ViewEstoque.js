@@ -30,18 +30,25 @@ const Estoque = () => {
         <table className="tabela">
           <tr>
             <th>NOME</th>
-            <th>CPF</th>
-            <th>EMAIL</th>
-            <th>TELEFONE</th>
-            <th>EDITAR</th>
+            <th>TAMANHO</th>
+            <th>LOTE</th>
+            <th>VALIDADE</th>
+            <th>QTD EM ESTOQUE</th>
+            <th>ESTOQUE MÍNIMO</th>
+            <th>ESTOQUE MÁXIMO</th>
+            <th>VAlOR DE REPOSIÇÃO</th>
           </tr> 
           
-          {/* {dados.map((dados) => (
+          {dados.map((dados) => (
                     <tr key={dados.id}>
                       <td>{dados.nome}</td>
-                      <td>{dados.cpf}</td>
-                      <td>{dados.email}</td>
-                      <td>{dados.telefone}</td>
+                      <td>{dados.tamanho}</td>
+                      <td>{dados.lote}</td>
+                      <td>{dados.validade}</td>
+                      <td>{dados.quantidadeEmEstoque}</td>
+                      <td>{dados.estoqueMinimo}</td>
+                      <td>{dados.estoqueMaximo}</td>
+                      <td>{dados.valorDeReposicao}</td>
                       <td><IconButton
                       aria-label="edit"
                       >
@@ -56,7 +63,7 @@ const Estoque = () => {
                       
                       
                     </tr>
-                  ))} */}
+                  ))}
           
         </table>
       </div>

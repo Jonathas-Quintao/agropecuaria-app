@@ -29,19 +29,20 @@ const Fornecedores = () => {
         <Cabecalho navigate="/cadastrofornecedores"/>
         <table className="tabela">
           <tr>
-            <th>NOME</th>
-            <th>CPF</th>
-            <th>EMAIL</th>
+            <th>RAZÃO SOCIAL</th>
+            <th>CNPJ</th>
             <th>TELEFONE</th>
-            <th>EDITAR</th>
+            <th>EMAIL</th>
+            <th>DESCRIÇÃO</th>
           </tr> 
           
-          {/* {dados.map((dados) => (
+          {dados.map((dados) => (
                     <tr key={dados.id}>
-                      <td>{dados.nome}</td>
-                      <td>{dados.cpf}</td>
-                      <td>{dados.email}</td>
+                      <td>{dados.razaoSocial}</td>
+                      <td>{dados.cnpj}</td>
                       <td>{dados.telefone}</td>
+                      <td>{dados.email}</td>
+                      <td>{dados.descricao}</td>
                       <td><IconButton
                       aria-label="edit"
                       >
@@ -56,7 +57,7 @@ const Fornecedores = () => {
                       
                       
                     </tr>
-                  ))} */}
+                  ))}
           
         </table>
       </div>
