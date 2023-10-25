@@ -3,12 +3,14 @@
     border-collapse: collapse;
     border-radius: 4px;
     margin-top: 50px;
+    
   }
   
   .tabela th,
   .tabela td {
     padding: 10px 15px;
     border: 1px solid #ccc;
+    
   }
   
   .tabela th {

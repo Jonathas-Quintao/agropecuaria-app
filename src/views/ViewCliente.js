@@ -23,7 +23,7 @@ const Cliente = () => {
     <div className="teste">
       <NavBar />
       <div>
-        <Cabecalho />
+        <Cabecalho navigate="/cadastroclientes"/>
         <table className="tabela">
           <tr>
             <th>NOME</th>

@@ -4,6 +4,10 @@ import Cabecalho from "../components/cabecalho";
 import "./inicial.css";
 import axios from "axios";
 import { URL_BASE } from "../config/axios";
+import {IconButton} from "@mui/material"
+import EditIcon from "@mui/icons-material/Edit"
+import DeleteIcon from "@mui/icons-material/Delete"
+
 
 const Funcionario = () => {
     const baseURL = `${URL_BASE}/funcionario`;
@@ -18,18 +22,20 @@ const Funcionario = () => {
     
   if (!dados) return null;
 
+  
+
   return (
     <div className="teste">
       <NavBar />
       <div className="conteudo">
-        <Cabecalho />
+        <Cabecalho navigate="/cadastrofuncionarios"/>
         <table className="tabela">
           <tr>
             <th>NOME</th>
             <th>CPF</th>
             <th>EMAIL</th>
             <th>TELEFONE</th>
-            <th>ENDEREÇO</th>
+            <th>EDITAR</th>
           </tr> 
           
           {dados.map((dados) => (
@@ -38,7 +44,17 @@ const Funcionario = () => {
                       <td>{dados.cpf}</td>
                       <td>{dados.email}</td>
                       <td>{dados.telefone}</td>
-                      <td>{dados.endereco}</td>
+                      <td><IconButton
+                      aria-label="edit"
+                      >
+                        <EditIcon/>
+                        </IconButton>
+                        <IconButton
+                      aria-label="delete"
+                      >
+                        <DeleteIcon/>
+                        </IconButton></td>
+                      
                       
                       
                     </tr>
