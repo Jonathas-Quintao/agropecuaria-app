@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete"
 
 
 const Dividas = () => {
-    /* const baseURL = `${URL_BASE}/dividas`;
+    const baseURL = `${URL_BASE}/dividas`;
 
     const [dados, setDados] = useState(null);
 
@@ -20,7 +20,7 @@ const Dividas = () => {
       });
     }, []);
     
-  if (!dados) return null; */
+  if (!dados) return null; 
 
   return (
     <div className="teste">

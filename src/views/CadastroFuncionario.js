@@ -3,6 +3,7 @@ import { TextField } from "@mui/material";
 import {Stack} from "@mui/material";
 import NavBar from "../components/navbar";
 import "./inicial.css";
+import "./stylesCadastro.css"
 
 const CadastroFuncionario = () => {
     const [nome, setNome] = useState('')
@@ -18,17 +19,21 @@ const CadastroFuncionario = () => {
     <div className="teste">
       <NavBar/>
 
-      <div className="container"> 
+      <div className="container" > 
+      <div className="containerInput">
+
         <div className="rows">
           <div className="col-lg-12">
             <div className="bs-component">
-              <Stack direction='column'>
+              <Stack direction='column' className="cadastroFuncionarioStack">
 
               <TextField
                 label="Nome: *"
                 name="nome"
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
+                className="form-control"
+                
               />
               <TextField
                 label="CPF: *"
@@ -36,24 +41,29 @@ const CadastroFuncionario = () => {
                 value={cpf}
                 onChange={(e) => setCpf(e.target.value)}
                 maxLength="11"
+                className="form-control "
               />
               <TextField
                 label="Email: *"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="form-control "
               />
               <TextField
                 label="Telefone:"
                 name="telefone"
                 value={telefone}
                 onChange={(e) => setTelefone(e.target.value)}
+                className="form-control "
               />
               <TextField
                 label="Endereco:"
                 name="endereco"
                 value={endereco}
                 onChange={(e) => setEndereco(e.target.value)}
+                className="form-control custom-text-field"
+                
               />
               </Stack>
               <Stack direction="row" spacing={1} padding={1}>
@@ -64,6 +74,7 @@ const CadastroFuncionario = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

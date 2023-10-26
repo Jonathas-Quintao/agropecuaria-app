@@ -27,13 +27,16 @@ export default function NavBar() {
                         onClick={() => setActive('/clientes')}>Clientes</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class={`nav-link ${active === "/fornecedores" ? "active" : ""}`}  to="/fornecedores">Fornecedores</Link>
+                        <Link class={`nav-link ${active === "/fornecedores" ? "active" : ""}`}  to="/fornecedores"
+                        onClick={() => setActive('/fornecedores')}>Fornecedores</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class={`nav-link ${active === "/compras" ? "active" : ""}`} to="/compras">Compras</Link>
+                        <Link class={`nav-link ${active === "/compras" ? "active" : ""}`} to="/compras"
+                        onClick={() => setActive('/compras')}>Compras</Link>
                     </li>
                     <li class="nav-item">
-                        <Link class={`nav-link ${active === "/dividas" ? "active" : ""}`} to="/dividas">Dívidas</Link>
+                        <Link class={`nav-link ${active === "/dividas" ? "active" : ""}`} to="/dividas"
+                        onClick={() => setActive('/dividas')}>Dívidas</Link>
                     </li>
                 </ul>
             </nav>

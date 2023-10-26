@@ -5,6 +5,10 @@ import "../components/tabela.css";
 import "./inicial.css";
 import axios from "axios";
 import { URL_BASE } from "../config/axios";
+import {IconButton} from "@mui/material"
+import EditIcon from "@mui/icons-material/Edit"
+import DeleteIcon from "@mui/icons-material/Delete"
+import { mensagemErro, mensagemSucesso } from "../components/toastr";
 
 const Cliente = () => {
   const baseURL = `${URL_BASE}/cliente`;
@@ -19,6 +23,27 @@ const Cliente = () => {
 
   if (!dados) return null;
 
+  async function excluir(id) {
+    let data = JSON.stringify({ id });
+    let url = `${baseURL}/${id}`;
+    console.log(url);
+    await axios
+      .delete(url, data, {
+        headers: { 'Content-Type': 'application/json' },
+      })
+      .then(function (response) {
+        mensagemSucesso(`Professor excluído com sucesso!`);
+        setDados(
+          dados.filter((dado) => {
+            return dado.id !== id;
+          })
+        );
+      })
+      .catch(function (error) {
+        mensagemErro(`Erro ao excluir o professor`);
+      });
+  }
+
   return (
     <div className="teste">
       <NavBar />
@@ -30,7 +55,7 @@ const Cliente = () => {
             <th>CPF</th>
             <th>EMAIL</th>
             <th>TELEFONE</th>
-            <th>ENDEREÇO</th>
+            <th>EDITAR</th>
           </tr>
 
           {dados.map((dados) => (
@@ -38,8 +63,18 @@ const Cliente = () => {
               <td>{dados.nome}</td>
               <td>{dados.cpf}</td>
               <td>{dados.email}</td>
-              <td>{dados.telefone}</td>
-              <td>{dados.endereco}</td>
+              <td>{dados.telefone}</td>             
+              <td><IconButton
+                      aria-label="edit"
+                      >
+                        <EditIcon/>
+                        </IconButton>
+                        <IconButton
+                      aria-label="delete"
+                      onClick={() => excluir(dados.id)}
+                      >
+                        <DeleteIcon/>
+                        </IconButton></td>
             </tr>
           ))}
         </table>
