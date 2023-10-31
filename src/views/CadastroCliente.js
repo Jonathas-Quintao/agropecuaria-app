@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const CadastroClientes = () => {
   const navigate = useNavigate();
 
-  const { id } = useParams;
+  const { id } = useParams();
 
   const baseURL = `${URL_BASE}/cliente/${id}`;
 

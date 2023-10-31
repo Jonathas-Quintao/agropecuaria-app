@@ -19,10 +19,10 @@ const CadastroEstoque = () => {
     tamanho: "",
     lote: '',
     validade: '',
-    qtdEstoque: '',
-    estoqueMin: "",
-    estoqueMax: "",
-    reposicao: "",
+    quantidadeEmEstoque: 0,
+    estoqueMinimo: 0,
+    estoqueMaximo: 0,
+    valorDeReposicao: 0,
   });
 
   
@@ -85,7 +85,7 @@ const CadastroEstoque = () => {
               <TextField
                 label="Quantidade em estoque: *"
                 name="qtdEstoque"
-                value={estoque.qtdEstoque}
+                value={estoque.quantidadeEmEstoque}
                 onChange={(e) =>  setEstoque({ ...estoque, qtdEstoque: e.target.value })}
                 className="form-control custom-text-field"
                 
@@ -93,7 +93,7 @@ const CadastroEstoque = () => {
               <TextField
                 label="Estoque Mínimo: *"
                 name="estoqueMin"
-                value={estoque.estoqueMin}
+                value={estoque.estoqueMinimo}
                 onChange={(e) =>  setEstoque({ ...estoque, estoqueMin: e.target.value })}
                 className="form-control custom-text-field"
                 
@@ -101,7 +101,7 @@ const CadastroEstoque = () => {
               <TextField
                 label="Estoque Máximo: *"
                 name="estoqueMax"
-                value={estoque.estoqueMax}
+                value={estoque.estoqueMaximo}
                 onChange={(e) =>  setEstoque({ ...estoque, estoqueMax: e.target.value })}
                 className="form-control custom-text-field"
                 
@@ -109,7 +109,7 @@ const CadastroEstoque = () => {
               <TextField
                 label="Valor de reposição: *"
                 name="reposicao"
-                value={estoque.reposicao}
+                value={estoque.valorDeReposicao}
                 onChange={(e) =>  setEstoque({ ...estoque, reposicao: e.target.value })}
                 className="form-control custom-text-field"
                 
