@@ -9,11 +9,18 @@ import {IconButton} from "@mui/material"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
 import { mensagemErro, mensagemSucesso } from "../components/toastr";
+import { useNavigate } from "react-router-dom";
 
 const Cliente = () => {
   const baseURL = `${URL_BASE}/cliente`;
 
   const [dados, setDados] = useState(null);
+
+  const navigate = useNavigate()
+
+  const editar = (id) => {
+    navigate(`/cadastroclientes/${id}`);
+  };
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -66,6 +73,7 @@ const Cliente = () => {
               <td>{dados.telefone}</td>             
               <td><IconButton
                       aria-label="edit"
+                      onClick={() => editar(dados.id)}
                       >
                         <EditIcon/>
                         </IconButton>

@@ -1,21 +1,44 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { TextField } from "@mui/material";
 import {Stack} from "@mui/material";
 import NavBar from "../components/navbar";
 import "./inicial.css";
 import "./stylesCadastro.css"
 
+import { URL_BASE } from "../config/axios";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 const CadastroEstoque = () => {
-    const [nome, setNome] = useState('')
-    const [tamanho, setTamanho] = useState('')
-    const [lote, setLote] = useState('')
-    const [validade, setValidade] = useState('')
-    const [qtdEstoque, setQtdEstoque] = useState('')
-    const [estoqueMin, setEstoqueMin] = useState('')
-    const [estoqueMax, setEstoqueMax] = useState('')
-    const [reposicao, setReposicao] = useState('')
+    const { id } = useParams();
 
+  const baseURL = `${URL_BASE}/produto/${id}`;
 
+  const [estoque, setEstoque] = useState({
+    nome: '',
+    tamanho: "",
+    lote: '',
+    validade: '',
+    qtdEstoque: '',
+    estoqueMin: "",
+    estoqueMax: "",
+    reposicao: "",
+  });
+
+  
+
+  useEffect(() => {
+    if (id) {
+      axios
+        .get(`${baseURL}`)
+        .then((response) => {
+          setEstoque(response.data);
+        })
+        .catch((error) => {
+          console.error("Erro ao buscar os dados", error);
+        });
+    }
+  }, [id]);
 
 
   return (
@@ -33,61 +56,61 @@ const CadastroEstoque = () => {
               <TextField
                 label="Nome: *"
                 name="nome"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
+                value={estoque.nome}
+                onChange={(e) =>  setEstoque({ ...estoque, nome: e.target.value })}
                 className="form-control"
                 
               />
               <TextField
                 label="Tamanho: *"
                 name="tamanho"
-                value={tamanho}
-                onChange={(e) => setTamanho(e.target.value)}
+                value={estoque.tamanho}
+                onChange={(e) =>  setEstoque({ ...estoque, tamanho: e.target.value })}
                 className="form-control "
               />
               <TextField
                 label="Lote: *"
                 name="lote"
-                value={lote}
-                onChange={(e) => setLote(e.target.value)}
+                value={estoque.lote}
+                onChange={(e) =>  setEstoque({ ...estoque, lote: e.target.value })}
                 className="form-control "
               />
               <TextField
                 label="Validade: *"
                 name="validade"
-                value={validade}
-                onChange={(e) => setValidade(e.target.value)}
+                value={estoque.validade}
+                onChange={(e) =>  setEstoque({ ...estoque, validade: e.target.value })}
                 className="form-control "
               />
               <TextField
                 label="Quantidade em estoque: *"
                 name="qtdEstoque"
-                value={qtdEstoque}
-                onChange={(e) => setQtdEstoque(e.target.value)}
+                value={estoque.qtdEstoque}
+                onChange={(e) =>  setEstoque({ ...estoque, qtdEstoque: e.target.value })}
                 className="form-control custom-text-field"
                 
               />
               <TextField
                 label="Estoque Mínimo: *"
                 name="estoqueMin"
-                value={estoqueMin}
-                onChange={(e) => setEstoqueMin(e.target.value)}
+                value={estoque.estoqueMin}
+                onChange={(e) =>  setEstoque({ ...estoque, estoqueMin: e.target.value })}
                 className="form-control custom-text-field"
                 
               />
               <TextField
                 label="Estoque Máximo: *"
                 name="estoqueMax"
-                value={estoqueMax}
-                onChange={(e) => setEstoqueMax(e.target.value)}
+                value={estoque.estoqueMax}
+                onChange={(e) =>  setEstoque({ ...estoque, estoqueMax: e.target.value })}
                 className="form-control custom-text-field"
                 
               />
               <TextField
                 label="Valor de reposição: *"
                 name="reposicao"
-                value={reposicao}
-                onChange={(e) => setReposicao(e.target.value)}
+                value={estoque.reposicao}
+                onChange={(e) =>  setEstoque({ ...estoque, reposicao: e.target.value })}
                 className="form-control custom-text-field"
                 
               />

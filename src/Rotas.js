@@ -41,27 +41,27 @@ const Router = () => {
           element: <Dividas />
         },
         {
-          path: 'cadastrofuncionarios',
+          path: 'cadastrofuncionarios/:id?',
           element: <CadastroFuncionario />
         },
         {
-          path: 'cadastroclientes',
+          path: 'cadastroclientes/:id?',
           element: <CadastroClientes />
         },
         {
-          path: 'cadastroestoque',
+          path: 'cadastroestoque/:id?',
           element: <CadastroEstoque />
         },
         {
-          path: 'cadastrocompras',
+          path: 'cadastrocompras/:id?',
           element: <CadastroCompras />
         },
         {
-          path: 'cadastrofornecedores',
+          path: 'cadastrofornecedores/:id?',
           element: <CadastroFornecedores />
         },
         {
-          path: 'cadastrodividas',
+          path: 'cadastrodividas/:id?',
           element: <CadastroDividas />
         },
     

@@ -8,12 +8,19 @@ import {IconButton} from "@mui/material"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
 import { mensagemErro, mensagemSucesso } from "../components/toastr";
+import { useNavigate } from "react-router-dom";
 
 
 const Estoque = () => {
     const baseURL = `${URL_BASE}/produto`;
 
+    const navigate = useNavigate()
+
     const [dados, setDados] = useState(null);
+
+    const editar = (id) => {
+      navigate(`/cadastroestoque/${id}`);
+    };
 
     useEffect(() => {
       axios.get(baseURL).then((response) => {
@@ -75,6 +82,7 @@ const Estoque = () => {
                       <td>{dados.valorDeReposicao}</td>
                       <td><IconButton
                       aria-label="edit"
+                      onClick={() => editar(dados.id)}
                       >
                         <EditIcon/>
                         </IconButton>
