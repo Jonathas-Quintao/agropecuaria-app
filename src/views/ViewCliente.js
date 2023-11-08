@@ -58,7 +58,7 @@ const Cliente = () => {
         <Cabecalho navigate="/cadastroclientes"/>
         <table className="tabela">
           <tr>
-            <th>NOME</th>
+            <th>teste</th>
             <th>CPF</th>
             <th>EMAIL</th>
             <th>TELEFONE</th>
