@@ -1,0 +1,29 @@
+.imagem{
+    width: 50em;
+    height: 30em;
+    margin-top: 5em;
+}
+.titulo{
+    margin-top: 2.2em;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.descricao{
+    
+    font-size: 1.5rem;
+    margin-right: 5em;
+
+}
+.precoLabel{
+    margin-top: 10em;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+.preco{
+    font-size: 1.9rem;
+}
+.comboBox{
+    width: 300px;
+    margin-top: 2em;
+}

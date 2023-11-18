@@ -12,6 +12,8 @@ import Compras from "./views/ViewCompras"
 import Estoque from "./views/ViewEstoque"
 import Dividas from "./views/ViewDividas"
 
+import PaginaProduto from "./views/PaginaProduto";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const Router = () => {
@@ -64,6 +66,10 @@ const Router = () => {
           path: 'cadastrodividas/:id?',
           element: <CadastroDividas />
         },
+        {
+          path: 'paginaproduto/:id?',
+          element: <PaginaProduto />
+        }
     
       ])
 

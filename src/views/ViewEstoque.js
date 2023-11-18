@@ -9,6 +9,7 @@ import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
 import { mensagemErro, mensagemSucesso } from "../components/toastr";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Estoque = () => {
@@ -72,7 +73,7 @@ const Estoque = () => {
           
           {dados.map((dados) => (
                     <tr key={dados.id}>
-                      <td>{dados.nome}</td>
+                     <td> <Link to='/paginaproduto'>{dados.nome}</Link></td>
                       <td>{dados.tamanho}</td>
                       <td>{dados.lote}</td>
                       <td>{dados.validade}</td>
