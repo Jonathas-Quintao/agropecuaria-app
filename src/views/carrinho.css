@@ -1,0 +1,22 @@
+.imagemCarrinho {
+    width: 10em;
+    height: 10em;
+    margin-top: 0;
+  }
+
+  .table-responsive {
+    margin-top:100px;
+  }
+
+  .tabelinha tr:hover {
+    background-color: #eee;
+  }
+  .tabelinha{
+    margin-top: 5em;
+    margin-left: 5em;
+    
+  }
+  .botao{
+    margin-top: 2em;
+    margin-left: 5.7em;
+  }

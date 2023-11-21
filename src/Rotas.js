@@ -13,6 +13,7 @@ import Estoque from "./views/ViewEstoque"
 import Dividas from "./views/ViewDividas"
 
 import PaginaProduto from "./views/PaginaProduto";
+import Carrinho from "./views/Carrinho";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -69,6 +70,10 @@ const Router = () => {
         {
           path: 'paginaproduto/:id?',
           element: <PaginaProduto />
+        },
+        {
+          path: 'carrinho/:id?',
+          element: <Carrinho />
         }
     
       ])

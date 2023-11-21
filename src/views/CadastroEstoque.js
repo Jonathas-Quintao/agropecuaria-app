@@ -16,7 +16,6 @@ const CadastroEstoque = () => {
 
   const [estoque, setEstoque] = useState({
     nome: '',
-    tamanho: "",
     lote: '',
     validade: '',
     quantidadeEmEstoque: 0,
@@ -60,13 +59,6 @@ const CadastroEstoque = () => {
                 onChange={(e) =>  setEstoque({ ...estoque, nome: e.target.value })}
                 className="form-control"
                 
-              />
-              <TextField
-                label="Tamanho: *"
-                name="tamanho"
-                value={estoque.tamanho}
-                onChange={(e) =>  setEstoque({ ...estoque, tamanho: e.target.value })}
-                className="form-control "
               />
               <TextField
                 label="Lote: *"

@@ -19,8 +19,8 @@ const Estoque = () => {
 
     const [dados, setDados] = useState(null);
 
-    const editar = (id) => {
-      navigate(`/cadastroestoque/${id}`);
+    const navegar = (id, pagina) => {
+      navigate(`/${pagina}/${id}`);
     };
 
     useEffect(() => {
@@ -61,7 +61,7 @@ const Estoque = () => {
         <table className="tabela">
           <tr>
             <th>NOME</th>
-            <th>TAMANHO</th>
+            
             <th>LOTE</th>
             <th>VALIDADE</th>
             <th>QTD EM ESTOQUE</th>
@@ -73,8 +73,8 @@ const Estoque = () => {
           
           {dados.map((dados) => (
                     <tr key={dados.id}>
-                     <td> <Link to='/paginaproduto'>{dados.nome}</Link></td>
-                      <td>{dados.tamanho}</td>
+                     <td onClick={() => navegar(dados.id, "paginaproduto" )}>{dados.nome}</td>
+                      
                       <td>{dados.lote}</td>
                       <td>{dados.validade}</td>
                       <td>{dados.quantidadeEmEstoque}</td>
@@ -83,7 +83,7 @@ const Estoque = () => {
                       <td>{dados.valorDeReposicao}</td>
                       <td><IconButton
                       aria-label="edit"
-                      onClick={() => editar(dados.id)}
+                      onClick={() => navegar(dados.id, 'cadastroestoque')}
                       >
                         <EditIcon/>
                         </IconButton>
