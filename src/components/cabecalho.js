@@ -9,7 +9,7 @@ const Cabecalho = ({navigate}) => {
         <div className="container">
             <input type="text" placeholder="PESQUISAR" className="input-pesquisar "/>
             <button type="submit" className="btn-pesquisar btn btn-primary" > PESQUISAR</button>
-            <button type="submit" className="btn-cadastrar btn btn-primary" onClick={() => navigation(navigate)}>CADASTRAR PRODUTO</button> 
+            <button type="submit" className="btn-cadastrar btn btn-primary" onClick={() => navigation(navigate)}>CADASTRAR</button> 
         </div>
     )
 }

@@ -24,6 +24,16 @@ const CadastroClientes = () => {
     endereco: "",
   });
 
+  const cancelar = () => {
+    setCliente({
+      nome: "",
+    cpf: "",
+    email: "",
+    telefone: "",
+    endereco: "",
+    })
+  }
+
   useEffect(() => {
     if (id) {
       axios
@@ -46,6 +56,8 @@ const CadastroClientes = () => {
           <div className="rows">
             <div className="col-lg-12">
               <div className="bs-component">
+                <div className="conteudoCadastro">
+
                 <Stack direction="column" className="cadastroFuncionarioStack">
                   <TextField
                     label="Nome: *"
@@ -98,10 +110,11 @@ const CadastroClientes = () => {
                   <button type="button" className="btn btn-success">
                     SALVAR
                   </button>
-                  <button type="button" className="btn btn-danger">
+                  <button type="button" className="btn btn-danger" onClick={() => cancelar()}>
                     CANCELAR
                   </button>
                 </Stack>
+                </div>
               </div>
             </div>
           </div>

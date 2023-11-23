@@ -8,11 +8,14 @@ import "./stylesCadastro.css"
 import { URL_BASE } from "../config/axios";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CadastroEstoque = () => {
     const { id } = useParams();
 
   const baseURL = `${URL_BASE}/produto/${id}`;
+
+  const navigation = useNavigate()
 
   const [estoque, setEstoque] = useState({
     nome: '',
@@ -23,6 +26,18 @@ const CadastroEstoque = () => {
     estoqueMaximo: 0,
     valorDeReposicao: 0,
   });
+
+  const cancelar = () => {
+    setEstoque({
+      nome: '',
+      lote: '',
+      validade: '',
+      quantidadeEmEstoque: 0,
+      estoqueMinimo: 0,
+      estoqueMaximo: 0,
+      valorDeReposicao: 0,
+    })
+  }
 
   
 
@@ -50,6 +65,8 @@ const CadastroEstoque = () => {
         <div className="rows">
           <div className="col-lg-12">
             <div className="bs-component">
+              <div className="conteudoCadastro">
+
               <Stack direction='column' className="cadastroFuncionarioStack">
 
               <TextField
@@ -110,8 +127,9 @@ const CadastroEstoque = () => {
               <Stack direction="row" spacing={1} padding={1}>
 
               <button type="button" className="btn btn-success">SALVAR</button>
-              <button type="button" className="btn btn-danger">CANCELAR</button>
+              <button type="button" className="btn btn-danger"  onClick={() => cancelar()}>CANCELAR</button>
               </Stack>
+              </div>
             </div>
           </div>
         </div>

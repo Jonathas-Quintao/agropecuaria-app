@@ -25,6 +25,16 @@ const CadastroFuncionario = () => {
     endereco: "",
   });
 
+  const cancelar = () => {
+    setFuncionario({
+      nome: '',
+      cpf: "",
+      email: "",
+      telefone: "",
+      endereco: "",
+    })
+  }
+
   
 
   useEffect(() => {
@@ -49,6 +59,8 @@ const CadastroFuncionario = () => {
           <div className="rows">
             <div className="col-lg-12">
               <div className="bs-component">
+                <div className="conteudoCadastro">
+
                 <Stack direction="column" className="cadastroFuncionarioStack">
                   <TextField
                     label="Nome: *"
@@ -108,10 +120,11 @@ const CadastroFuncionario = () => {
                   <button type="button" className="btn btn-success">
                     SALVAR
                   </button>
-                  <button type="button" className="btn btn-danger">
+                  <button type="button" className="btn btn-danger"  onClick={() => cancelar()}>
                     CANCELAR
                   </button>
                 </Stack>
+                </div>
               </div>
             </div>
           </div>

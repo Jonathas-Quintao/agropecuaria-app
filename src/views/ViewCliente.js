@@ -54,7 +54,8 @@ const Cliente = () => {
   return (
     <div className="teste">
       <NavBar />
-      <div>
+
+      <div className="conteudo">
         <Cabecalho navigate="/cadastroclientes"/>
         <table className="tabela">
           <tr>

@@ -25,6 +25,16 @@ const CadastroFornecedores = () => {
     descricao: "",
   });
 
+  const cancelar = () => {
+    setFornecedores({
+      razaoSocial: "",
+    cnpj: "",
+    email: "",
+    telefone: "",
+    descricao: "",
+    })
+  }
+
   useEffect(() => {
     if (id) {
       axios
@@ -41,12 +51,14 @@ const CadastroFornecedores = () => {
   return (
     <div className="teste">
       <NavBar />
-
+      
       <div className="container">
         <div className="containerInput">
           <div className="rows">
             <div className="col-lg-12">
               <div className="bs-component">
+                <div className="conteudoCadastro">
+
                 <Stack direction="column" className="cadastroFuncionarioStack">
                   <TextField
                     label="Razão Social: *"
@@ -111,10 +123,11 @@ const CadastroFornecedores = () => {
                   <button type="button" className="btn btn-success">
                     SALVAR
                   </button>
-                  <button type="button" className="btn btn-danger">
+                  <button type="button" className="btn btn-danger"  onClick={() => cancelar()}>
                     CANCELAR
                   </button>
                 </Stack>
+                </div>
               </div>
             </div>
           </div>

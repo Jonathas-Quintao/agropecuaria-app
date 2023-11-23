@@ -24,4 +24,5 @@
 }
 .barra-menu{
     width: 15%;
+    position: fixed;
 }
