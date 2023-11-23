@@ -9,6 +9,7 @@ import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
 import {mensagemErro, mensagemSucesso} from "../components/toastr"
 import { useNavigate } from "react-router-dom";
+import toastr from "toastr";
 
 
 const Funcionario = () => {
@@ -39,7 +40,7 @@ const Funcionario = () => {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Professor excluído com sucesso!`);
+        mensagemSucesso(`Funcionario excluído com sucesso!`);
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;

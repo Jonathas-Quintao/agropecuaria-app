@@ -21,7 +21,12 @@ const CadastroClientes = () => {
     cpf: "",
     email: "",
     telefone: "",
-    endereco: "",
+    estado: "",
+    cidade: "",
+    bairro:"",
+    rua: "",
+    numero_residencial: "",
+    complemento: "",
   });
 
   const cancelar = () => {
@@ -30,7 +35,12 @@ const CadastroClientes = () => {
     cpf: "",
     email: "",
     telefone: "",
-    endereco: "",
+    estado: "",
+    cidade: "",
+    bairro:"",
+    rua: "",
+    numero_residencial: "",
+    complemento: "",
     })
   }
 
@@ -97,11 +107,57 @@ const CadastroClientes = () => {
                     className="form-control "
                   />
                   <TextField
-                    label="Endereco:"
-                    name="endereco"
-                    value={cliente.endereco}
+                    label="Cidade:"
+                    name="cidade"
+                    value={cliente.cidade}
                     onChange={(e) =>
-                      setCliente({ ...cliente, endereco: e.target.value })
+                      setCliente({ ...cliente, cidade: e.target.value })
+                    }
+                    className="form-control custom-text-field"
+                  />
+                  <TextField
+                    label="Estado:"
+                    name="estado"
+                    value={cliente.estado}
+                    onChange={(e) =>
+                      setCliente({ ...cliente, estado: e.target.value })
+                    }
+                    className="form-control custom-text-field"
+                  />
+                  <TextField
+                    label="Bairro:"
+                    name="bairro"
+                    value={cliente.bairro}
+                    onChange={(e) =>
+                      setCliente({ ...cliente, bairro: e.target.value })
+                    }
+                    className="form-control custom-text-field"
+                  />
+                  <TextField
+                    label="Rua:"
+                    name="rua"
+                    value={cliente.rua}
+                    onChange={(e) =>
+                      setCliente({ ...cliente, rua: e.target.value })
+                    }
+                    className="form-control custom-text-field"
+                  />
+                  
+                  <TextField
+                    label="Numero:"
+                    name="numero"
+                    value={cliente.numero_residencial}
+                    onChange={(e) =>
+                      setCliente({ ...cliente, numero_residencial: e.target.value })
+                    }
+                    className="form-control custom-text-field"
+                  />
+                  <TextField
+                    label="Complemento:"
+                    name="complemento"
+                    value={cliente.complemento}
+                    onChange={(e) =>
+                      setCliente({ ...cliente, complemento: e.target.value })
                     }
                     className="form-control custom-text-field"
                   />
