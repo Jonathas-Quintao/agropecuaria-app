@@ -19,23 +19,27 @@ const CadastroEstoque = () => {
 
   const [estoque, setEstoque] = useState({
     nome: '',
+    preco: 0,
     lote: '',
     validade: '',
     quantidadeEmEstoque: 0,
     estoqueMinimo: 0,
     estoqueMaximo: 0,
     valorDeReposicao: 0,
+    img_url: ''
   });
 
   const cancelar = () => {
     setEstoque({
       nome: '',
+      preco: 0,
       lote: '',
       validade: '',
       quantidadeEmEstoque: 0,
       estoqueMinimo: 0,
       estoqueMaximo: 0,
       valorDeReposicao: 0,
+      img_url: ''
     })
   }
 
@@ -75,6 +79,14 @@ const CadastroEstoque = () => {
                 value={estoque.nome}
                 onChange={(e) =>  setEstoque({ ...estoque, nome: e.target.value })}
                 className="form-control"
+                
+              />
+              <TextField
+                label="Preço: *"
+                name="preco"
+                value={estoque.preco}
+                onChange={(e) =>  setEstoque({ ...estoque, preco: e.target.value })}
+                className="form-control custom-text-field"
                 
               />
               <TextField
@@ -120,6 +132,14 @@ const CadastroEstoque = () => {
                 name="reposicao"
                 value={estoque.valorDeReposicao}
                 onChange={(e) =>  setEstoque({ ...estoque, reposicao: e.target.value })}
+                className="form-control custom-text-field"
+                
+              />
+              <TextField
+                label="Url do produto: *"
+                name="img_url"
+                value={estoque.img_url}
+                onChange={(e) =>  setEstoque({ ...estoque, img_url: e.target.value })}
                 className="form-control custom-text-field"
                 
               />

@@ -61,7 +61,7 @@ const Estoque = () => {
         <table className="tabela">
           <tr>
             <th>NOME</th>
-            
+            <th>PRECO</th>
             <th>LOTE</th>
             <th>VALIDADE</th>
             <th>QTD EM ESTOQUE</th>
@@ -74,7 +74,7 @@ const Estoque = () => {
           {dados.map((dados) => (
                     <tr key={dados.id}>
                      <td onClick={() => navegar(dados.id, "paginaproduto" )}>{dados.nome}</td>
-                      
+                     <td>{dados.preco}</td>
                       <td>{dados.lote}</td>
                       <td>{dados.validade}</td>
                       <td>{dados.quantidadeEmEstoque}</td>
