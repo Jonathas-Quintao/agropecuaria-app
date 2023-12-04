@@ -17,6 +17,23 @@ const Cliente = () => {
 
   const navigate = useNavigate()
 
+  const [termoPesquisa, setTermoPesquisa] = useState("");
+
+  const filtrarPesquisa = (termo) => {
+    setTermoPesquisa(termo);
+
+    if (!termo) {
+      axios.get(baseURL).then((response) => {
+        setDados(response.data);
+      });
+      return;
+    }
+    const dadosFiltrados = dados.filter((dado) =>
+      dado.nome.toLowerCase().includes(termo.toLowerCase())
+    );
+    setDados(dadosFiltrados);
+  };
+
   const editar = (id) => {
     navigate(`/cadastroclientes/${id}`);
   };
@@ -52,7 +69,7 @@ const Cliente = () => {
       <NavBar />
 
       <div className="conteudo">
-        <Cabecalho navigate="/cadastroclientes"/>
+        <Cabecalho navigate="/cadastroclientes" pesquisa={true} onPesquisar={filtrarPesquisa}/>
         <div className="background">
           <span className="titulo">CLIENTES</span>
         <table className="tabela">

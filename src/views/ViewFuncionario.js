@@ -18,6 +18,23 @@ const Funcionario = () => {
 
     const navigate = useNavigate()
 
+    const [termoPesquisa, setTermoPesquisa] = useState("");
+
+  const filtrarPesquisa = (termo) => {
+    setTermoPesquisa(termo);
+
+    if (!termo) {
+      axios.get(baseURL).then((response) => {
+        setDados(response.data);
+      });
+      return;
+    }
+    const dadosFiltrados = dados.filter((dado) =>
+      dado.nome.toLowerCase().includes(termo.toLowerCase())
+    );
+    setDados(dadosFiltrados);
+  };
+
     const editar = (id) => {
       navigate(`cadastrofuncionarios/${id}`);
     };
@@ -54,7 +71,7 @@ const Funcionario = () => {
     <div className="teste">
       <NavBar />
       <div className="conteudo">
-        <Cabecalho navigate="/cadastrofuncionarios"/>
+        <Cabecalho navigate="/cadastrofuncionarios" pesquisa={true} onPesquisar={filtrarPesquisa}/>
         
         <div className="background">
         <span className="titulo">FUNCIONÁRIOS</span>

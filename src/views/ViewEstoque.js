@@ -17,6 +17,23 @@ const Estoque = () => {
 
     const [dados, setDados] = useState(null);
 
+    const [termoPesquisa, setTermoPesquisa] = useState("");
+
+    const filtrarPesquisa = (termo) => {
+      setTermoPesquisa(termo);
+  
+      if (!termo) {
+        axios.get(baseURL).then((response) => {
+          setDados(response.data);
+        });
+        return;
+      }
+      const dadosFiltrados = dados.filter((dado) =>
+        dado.nome.toLowerCase().includes(termo.toLowerCase())
+      );
+      setDados(dadosFiltrados);
+    };
+
     const navegar = (id, pagina) => {
       navigate(`/${pagina}/${id}`);
     };
@@ -52,7 +69,7 @@ const Estoque = () => {
     <div className="teste">
       <NavBar />
       <div className="conteudo">
-        <Cabecalho navigate="/cadastroestoque" />
+        <Cabecalho navigate="/cadastroestoque"  pesquisa={true} onPesquisar={filtrarPesquisa}/>
         <div className="background">
           <span className="titulo">ESTOQUE</span>
         <table className="tabela">

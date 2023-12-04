@@ -10,6 +10,29 @@ const Dividas = () => {
 
   const [dados, setDados] = useState(null);
 
+  const [termoPesquisa, setTermoPesquisa] = useState("");
+
+  const filtrarPesquisa = (termo) => {
+    setTermoPesquisa(termo);
+
+    if (!termo) {
+      axios.get(baseURL).then((response) => {
+        setDados(response.data);
+      });
+      return;
+    }
+    const dadosFiltrados = dados.filter((dado) =>
+      dado.nome.toLowerCase().includes(termo.toLowerCase())
+    );
+    setDados(dadosFiltrados);
+  };
+
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setDados(response.data);
+    });
+  }, []);
+
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       setDados(response.data);
@@ -26,7 +49,7 @@ return (
   <div className="teste">
     <NavBar />
     <div className="conteudo">
-      <Cabecalho navigate="/cadastrofuncionarios"/>
+      <Cabecalho navigate="/cadastrofuncionarios" pesquisa={false} onPesquisar={filtrarPesquisa}/>
       
       <div className="background">
       <span className="titulo">DÍVIDAS</span>

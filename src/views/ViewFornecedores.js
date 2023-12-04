@@ -17,6 +17,23 @@ const Fornecedores = () => {
 
     const [dados, setDados] = useState(null);
 
+    const [termoPesquisa, setTermoPesquisa] = useState("");
+
+    const filtrarPesquisa = (termo) => {
+      setTermoPesquisa(termo);
+  
+      if (!termo) {
+        axios.get(baseURL).then((response) => {
+          setDados(response.data);
+        });
+        return;
+      }
+      const dadosFiltrados = dados.filter((dado) =>
+        dado.razaoSocial.toLowerCase().includes(termo.toLowerCase())
+      );
+      setDados(dadosFiltrados);
+    };
+
     const editar = (id) => {
       navigate(`/cadastrofornecedores/${id}`);
     };
@@ -51,7 +68,7 @@ const Fornecedores = () => {
     <div className="teste">
       <NavBar />
       <div className="conteudo">
-        <Cabecalho navigate="/cadastrofornecedores"/>
+        <Cabecalho navigate="/cadastrofornecedores" pesquisa={true} onPesquisar={filtrarPesquisa}/>
         <div className="background">
           <span className="titulo">FORNECEDORES</span>
         <table className="tabela">
