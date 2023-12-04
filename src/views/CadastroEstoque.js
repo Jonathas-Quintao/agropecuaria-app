@@ -5,6 +5,7 @@ import NavBar from "../components/navbar";
 import "./inicial.css";
 import "./stylesCadastro.css"
 
+
 import { URL_BASE } from "../config/axios";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -12,6 +13,8 @@ import { useNavigate } from "react-router-dom";
 
 const CadastroEstoque = () => {
     const { id } = useParams();
+
+    const dateFormatPattern = '\\d{2}/\\d{2}/\\d{4}'
 
   const baseURL = `${URL_BASE}/produto/${id}`;
 
@@ -65,12 +68,12 @@ const CadastroEstoque = () => {
 
       <div className="container" > 
       <div className="containerInput">
-
+      
         <div className="rows">
           <div className="col-lg-12">
             <div className="bs-component">
               <div className="conteudoCadastro">
-
+              <span className="titulo">CADASTRO ESTOQUE</span>
               <Stack direction='column' className="cadastroFuncionarioStack">
 
               <TextField
@@ -86,8 +89,7 @@ const CadastroEstoque = () => {
                 name="preco"
                 value={estoque.preco}
                 onChange={(e) =>  setEstoque({ ...estoque, preco: e.target.value })}
-                className="form-control custom-text-field"
-                
+                className="form-control custom-text-field"             
               />
               <TextField
                 label="Lote: *"
@@ -102,6 +104,7 @@ const CadastroEstoque = () => {
                 value={estoque.validade}
                 onChange={(e) =>  setEstoque({ ...estoque, validade: e.target.value })}
                 className="form-control "
+                InputProps
               />
               <TextField
                 label="Quantidade em estoque: *"

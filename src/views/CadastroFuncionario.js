@@ -66,6 +66,7 @@ const CadastroFuncionario = () => {
             <div className="col-lg-12">
               <div className="bs-component">
                 <div className="conteudoCadastro">
+                <span className="titulo">CADASTRO FUNCIONÁRIOS</span>
                   <Stack
                     direction="column"
                     className="cadastroFuncionarioStack"

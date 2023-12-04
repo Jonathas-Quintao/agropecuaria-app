@@ -3,65 +3,57 @@ import NavBar from "../components/navbar";
 import Cabecalho from "../components/cabecalho";
 import "./inicial.css";
 import axios from "axios";
-import { URL_BASE } from "../config/axios";
-import {IconButton} from "@mui/material"
-import EditIcon from "@mui/icons-material/Edit"
-import DeleteIcon from "@mui/icons-material/Delete"
+import { URL_2 } from "../config/axios";
+
 
 
 const Compras = () => {
-    /* const baseURL = `${URL_BASE}/compras`;
+  const baseURL = `${URL_2}/compras`;
 
-    const [dados, setDados] = useState(null);
+  const [dados, setDados] = useState(null);
 
-    useEffect(() => {
-      axios.get(baseURL).then((response) => {
-        setDados(response.data);
-      });
-    }, []);
-    
-  if (!dados) return null; */
 
-  return (
-    <div className="teste">
-      <NavBar />
-      <div className="conteudo">
-        <Cabecalho navigate="/cadastrocompras"/>
-        <table className="tabela">
-          <tr>
-            <th>NOME</th>
-            <th>CPF</th>
-            <th>EMAIL</th>
-            <th>TELEFONE</th>
-            <th>EDITAR</th>
-          </tr> 
-          
-          {/* {dados.map((dados) => (
-                    <tr key={dados.id}>
-                      <td>{dados.nome}</td>
-                      <td>{dados.cpf}</td>
-                      <td>{dados.email}</td>
-                      <td>{dados.telefone}</td>
-                      <td><IconButton
-                      aria-label="edit"
-                      >
-                        <EditIcon/>
-                        </IconButton>
-                        <IconButton
-                      aria-label="delete"
-                      >
-                        <DeleteIcon/>
-                        </IconButton></td>
-                      
-                      
-                      
-                    </tr>
-                  ))} */}
-          
-        </table>
+
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setDados(response.data);
+    });
+  }, []);
+  
+if (!dados) return null;
+
+return (
+  <div className="teste">
+    <NavBar />
+    <div className="conteudo">
+      <Cabecalho navigate="/cadastrofuncionarios"/>
+      
+      <div className="background">
+      <span className="titulo">COMPRAS</span>
+      <table className="tabela">
+        <tr>
+          <th>CLIENTE</th>
+          <th>FUNCIONARIO</th>
+          <th>PRODUTOS</th>
+          <th>TOTAL</th>
+          <th>NOTA FISCAL</th>
+        </tr> 
+        
+        {dados.map((dados) => (
+                  <tr key={dados.id}>
+                    <td>{dados.cliente}</td>
+                    <td>{dados.funcionario}</td>
+                    <td>{dados.produtos}</td>
+                    <td>{dados.precoTotal}</td>
+                    <td>{dados.notaFiscal}</td> 
+                  </tr>
+                ))}
+        
+      </table>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default Compras;

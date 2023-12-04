@@ -58,7 +58,7 @@ const CadastroFornecedores = () => {
             <div className="col-lg-12">
               <div className="bs-component">
                 <div className="conteudoCadastro">
-
+                <span className="titulo">CADASTRO FORNECEDORES</span>
                 <Stack direction="column" className="cadastroFuncionarioStack">
                   <TextField
                     label="Razão Social: *"

@@ -1,9 +1,9 @@
 import CadastroFuncionario from "./views/CadastroFuncionario";
-import CadastroCompras from "./views/CadastroCompras"
 import CadastroClientes from "./views/CadastroCliente"
 import CadastroFornecedores from "./views/CadastroFornecedores"
 import CadastroEstoque from "./views/CadastroEstoque"
-import CadastroDividas from "./views/CadastroDividas"
+import CadastroPerdas from "./views/CadastroPerdas";
+
 
 import Cliente from "./views/ViewCliente";
 import Funcionario from "./views/ViewFuncionario";
@@ -56,16 +56,12 @@ const Router = () => {
           element: <CadastroEstoque />
         },
         {
-          path: 'cadastrocompras/:id?',
-          element: <CadastroCompras />
-        },
-        {
           path: 'cadastrofornecedores/:id?',
           element: <CadastroFornecedores />
         },
         {
-          path: 'cadastrodividas/:id?',
-          element: <CadastroDividas />
+          path: 'cadastroperdas/:id?',
+          element: <CadastroPerdas/>
         },
         {
           path: 'paginaproduto/:id?',

@@ -7,9 +7,8 @@ import { URL_BASE } from "../config/axios";
 import {IconButton} from "@mui/material"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
-import {mensagemErro, mensagemSucesso} from "../components/toastr"
 import { useNavigate } from "react-router-dom";
-import toastr from "toastr";
+
 
 
 const Funcionario = () => {
@@ -40,16 +39,13 @@ const Funcionario = () => {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Funcionario excluído com sucesso!`);
+
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
           })
         );
       })
-      .catch(function (error) {
-        mensagemErro(`Erro ao excluir o professor`);
-      });
   }
 
   
@@ -59,6 +55,9 @@ const Funcionario = () => {
       <NavBar />
       <div className="conteudo">
         <Cabecalho navigate="/cadastrofuncionarios"/>
+        
+        <div className="background">
+        <span className="titulo">FUNCIONÁRIOS</span>
         <table className="tabela">
           <tr>
             <th>NOME</th>
@@ -93,6 +92,7 @@ const Funcionario = () => {
                   ))}
           
         </table>
+        </div>
       </div>
     </div>
   );

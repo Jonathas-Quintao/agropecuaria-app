@@ -7,10 +7,8 @@ import { URL_BASE } from "../config/axios";
 import {IconButton} from "@mui/material"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
-import { mensagemErro, mensagemSucesso } from "../components/toastr";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
 
 const Estoque = () => {
     const baseURL = `${URL_BASE}/produto`;
@@ -40,16 +38,13 @@ const Estoque = () => {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(function (response) {
-        mensagemSucesso(`Professor excluído com sucesso!`);
+
         setDados(
           dados.filter((dado) => {
             return dado.id !== id;
           })
         );
       })
-      .catch(function (error) {
-        mensagemErro(`Erro ao excluir o professor`);
-      });
   }
 
 
@@ -58,6 +53,8 @@ const Estoque = () => {
       <NavBar />
       <div className="conteudo">
         <Cabecalho navigate="/cadastroestoque" />
+        <div className="background">
+          <span className="titulo">ESTOQUE</span>
         <table className="tabela">
           <tr>
             <th>NOME</th>
@@ -100,6 +97,8 @@ const Estoque = () => {
                   ))}
           
         </table>
+        <button type="submit" className=" btn btn-primary btn-perdas" onClick={() => navegar(dados.id, 'cadastroperdas')}>PERDAS</button> 
+        </div>
       </div>
     </div>
   );

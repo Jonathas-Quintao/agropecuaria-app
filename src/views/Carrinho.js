@@ -14,13 +14,6 @@ const Carrinho = () => {
   const {state} = useLocation()
   const produto = state && state.produto
   const quantidade = state && state.quantidade
-
-  console.log(produto.nome)
-
-  produto.preco = 10
-
-  let total = 0;
-
   const baseURL = `${URL_BASE}/produto/${id}`;
 
   const imagem = produto.img_url;
@@ -53,19 +46,7 @@ const Carrinho = () => {
               <td className="text-center align-middle">{quantidade}</td>
               <td className="text-center align-middle">{ produto.preco * quantidade}</td>
             </tr>
-            <tr>
-              <td>
-                <img
-                  src={imagem}
-                  alt="imagem do produto"
-                  className="imagemCarrinho"
-                />{" "}
-                {produto.nome.toUpperCase()}
-              </td>
-              <td className="text-center align-middle">{produto.preco}</td>
-              <td className="text-center align-middle">{quantidade}</td>
-              <td className="text-center align-middle">{produto.preco * quantidade}</td>
-            </tr>
+            
            
           </tbody>
         </table>
@@ -74,7 +55,7 @@ const Carrinho = () => {
           <thead className="thead-dark">
             <tr>
               <th>Total</th>
-              <th>{produto.preco * quantidade * 2}</th>
+              <th>{produto.preco * quantidade}</th>
               
             </tr>
           </thead>
