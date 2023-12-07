@@ -5,8 +5,8 @@ import "./inicial.css";
 import axios from "axios";
 import { URL_2 } from "../config/axios";
 
-const Compras = () => {
-  const baseURL = `${URL_2}/compras`;
+const HistoricoComprasFornecedor = () => {
+  const baseURL = `${URL_2}/comprasEstoque`;
 
   const [dados, setDados] = useState(null);
 
@@ -22,7 +22,7 @@ const Compras = () => {
       return;
     }
     const dadosFiltrados = dados.filter((dado) =>
-      dado.cliente.toLowerCase().includes(termo.toLowerCase())
+      dado.fornecedor.toLowerCase().includes(termo.toLowerCase())
     );
     setDados(dadosFiltrados);
   };
@@ -45,8 +45,8 @@ const Compras = () => {
           <span className="titulo">COMPRAS</span>
           <table className="tabela">
             <tr>
-              <th>CLIENTE</th>
-              <th>FUNCIONARIO</th>
+              <th>FORNECEDOR</th>
+              <th>DATA</th>
               <th>PRODUTOS</th>
               <th>TOTAL</th>
               <th>NOTA FISCAL</th>
@@ -54,10 +54,10 @@ const Compras = () => {
 
             {dados.map((dados) => (
               <tr key={dados.id}>
-                <td>{dados.cliente}</td>
-                <td>{dados.funcionario}</td>
+                <td>{dados.fornecedor}</td>
+                <td>{dados.data}</td>
                 <td>{dados.produtos.join(', ')}</td>
-                <td>{dados.precoTotal}</td>
+                <td>{dados.valor}</td>
                 <td>{dados.notaFiscal}</td>
               </tr>
             ))}
@@ -68,4 +68,4 @@ const Compras = () => {
   );
 };
 
-export default Compras;
+export default HistoricoComprasFornecedor;

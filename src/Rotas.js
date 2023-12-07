@@ -4,6 +4,8 @@ import CadastroFornecedores from "./views/CadastroFornecedores"
 import CadastroEstoque from "./views/CadastroEstoque"
 import CadastroPerdas from "./views/CadastroPerdas";
 
+import HistoricoComprasFornecedor from "./views/HistoricoComprasFornecedores";
+
 
 import Cliente from "./views/ViewCliente";
 import Funcionario from "./views/ViewFuncionario";
@@ -70,6 +72,10 @@ const Router = () => {
         {
           path: 'carrinho/:id?',
           element: <Carrinho />
+        },
+        {
+          path: 'historicocompras/:id?',
+          element: <HistoricoComprasFornecedor />
         }
     
       ])

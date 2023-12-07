@@ -19,6 +19,10 @@ const Fornecedores = () => {
 
     const [termoPesquisa, setTermoPesquisa] = useState("");
 
+    const navegar = (id, pagina) => {
+      navigate(`/${pagina}/${id}`);
+    };
+
     const filtrarPesquisa = (termo) => {
       setTermoPesquisa(termo);
   
@@ -107,6 +111,7 @@ const Fornecedores = () => {
                   ))}
           
         </table>
+        <button type="submit" className=" btn btn-primary btn-perdas" onClick={() => navegar(dados.id, 'historicocompras')} >HISTÓRICO</button> 
         </div>
       </div>
     </div>
