@@ -42,7 +42,7 @@ const HistoricoComprasFornecedor = () => {
         <Cabecalho navigate="/cadastrofuncionarios" pesquisa={false} onPesquisar={filtrarPesquisa} />
 
         <div className="background">
-          <span className="titulo">COMPRAS</span>
+          <span className="titulo">HISTÓRICO DE COMPRAS COM FORNECEDORES</span>
           <table className="tabela">
             <tr>
               <th>FORNECEDOR</th>

@@ -27,6 +27,9 @@ const CadastroFuncionario = () => {
     numero_residencial: "",
     complemento: "",
   });
+  const navegar = ( pagina) => {
+    navigate(`/${pagina}`);
+  };
 
   const cancelar = () => {
     setFuncionario({
@@ -175,7 +178,7 @@ const CadastroFuncionario = () => {
                     />
                   </Stack>
                   <Stack direction="row" spacing={1} padding={1}>
-                    <button type="button" className="btn btn-success">
+                    <button type="button" className="btn btn-success" onClick={() => navegar('')}>
                       SALVAR
                     </button>
                     <button

@@ -24,6 +24,9 @@ const CadastroFornecedores = () => {
     telefone: "",
     descricao: "",
   });
+  const navegar = ( pagina) => {
+    navigate(`/${pagina}`);
+  };
 
   const cancelar = () => {
     setFornecedores({
@@ -120,7 +123,7 @@ const CadastroFornecedores = () => {
                   />
                 </Stack>
                 <Stack direction="row" spacing={1} padding={1}>
-                  <button type="button" className="btn btn-success">
+                  <button type="button" className="btn btn-success" onClick={() => navegar('fornecedor')}>
                     SALVAR
                   </button>
                   <button type="button" className="btn btn-danger"  onClick={() => cancelar()}>

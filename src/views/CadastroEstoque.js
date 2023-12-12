@@ -18,7 +18,7 @@ const CadastroEstoque = () => {
 
   const baseURL = `${URL_BASE}/produto/${id}`;
 
-  const navigation = useNavigate()
+  const navigate = useNavigate()
 
   const [estoque, setEstoque] = useState({
     nome: '',
@@ -45,6 +45,9 @@ const CadastroEstoque = () => {
       img_url: ''
     })
   }
+  const navegar = ( pagina) => {
+    navigate(`/${pagina}`);
+  };
 
   
 
@@ -149,7 +152,7 @@ const CadastroEstoque = () => {
               </Stack>
               <Stack direction="row" spacing={1} padding={1}>
 
-              <button type="button" className="btn btn-success">SALVAR</button>
+              <button type="button" className="btn btn-success" onClick={() => navegar('produto')}>SALVAR</button>
               <button type="button" className="btn btn-danger"  onClick={() => cancelar()}>CANCELAR</button>
               </Stack>
               </div>
