@@ -62,7 +62,14 @@ const Carrinho = () => {
           
         </table>
       </div>
-      <button type="button" className="btn btn-primary mr-2 rounded botao" >Finalizar Compra</button>
+      <button type="button" className="btn btn-primary mr-2 rounded botao" onClick={() =>
+                  navigate(`/finalizarcompras`, {
+                    state: {
+                      produto: produto,
+                      quantidade: quantidade                      
+                    },
+                  })
+                } >Finalizar Compra</button>
     </div>
       </div>
   );

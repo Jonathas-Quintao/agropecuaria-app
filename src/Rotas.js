@@ -16,8 +16,10 @@ import Dividas from "./views/ViewDividas"
 
 import PaginaProduto from "./views/PaginaProduto";
 import Carrinho from "./views/Carrinho";
+import FinalizarCompras from "./views/FinalizarCompra";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { FilterNone } from "@mui/icons-material";
 
 const Router = () => {
     const rotas =  createBrowserRouter([
@@ -76,6 +78,10 @@ const Router = () => {
         {
           path: 'historicocompras/:id?',
           element: <HistoricoComprasFornecedor />
+        },
+        {
+          path: 'finalizarcompras/:id?',
+          element: <FinalizarCompras />
         }
     
       ])
